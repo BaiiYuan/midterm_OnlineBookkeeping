@@ -3,8 +3,7 @@ import React, { Component } from 'react';
 import { BrowserRouter } from 'react-router-dom'
 
 import Sidebar from "./Sidebar.js"
-// import Footer from "../component/Footer.js"
-// import Slider from "../component/Slider.js"
+import { Header } from "../component/Header.js"
 import Content from "./Content.js"
 
 import '../assets/css/bootstrap.css';
@@ -15,6 +14,7 @@ class MainRoot extends Component {
     return (
       <BrowserRouter>
         <section id="container" >
+          <Header />
           <Sidebar />
           <Content />
         </section>

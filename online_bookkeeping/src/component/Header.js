@@ -1,38 +1,32 @@
 import React, { Component } from 'react';
-import { NavLink, Switch, Route } from 'react-router-dom'
+// import { NavLink, Switch, Route } from 'react-router-dom'
+import socketIOClient from "socket.io-client";
 
-import '../common-css/bootstrap.css';
-import '../layout-1/css/styles.css';
-import '../layout-1/css/responsive.css';
+import '../assets/css/bootstrap.css'
+import '../assets/font-awesome/css/font-awesome.css'
+import '../assets/css/style.css'
+import '../assets/css/style-responsive.css'
 
+var socket;
 class Header extends Component {
+  constructor() {
+    super();
+    this.state = {
+      endpoint: "http://localhost:3001/"
+    };
+
+    socket = socketIOClient(this.state.endpoint);
+  }
   render() {
     return (
-        <header>
-		      <div className="container-fluid position-relative no-side-padding">
-
-		        <a href="https://colorlib.com/wp/template/bona/" className="logo"><img src="logo.png" alt="Logo Image" /></a>
-
-		        <div className="menu-nav-icon" data-nav-menu="#main-menu"><i className="ion-navicon"></i></div>
-
-		        <ul className="main-menu visible-on-click" id="main-menu">
-		          <li><NavLink to="/Home">Home</NavLink></li>
-		          <li><NavLink to="/Article">Article</NavLink></li>
-		          <li><NavLink to="/Profile">Profile</NavLink></li>
-		        </ul>
-
-		        <div className="src-area">
-		          <form>
-		            <button className="src-btn" type="submit" style={{paddingTop: "2px",}}><ion-icon name="search" size="small"></ion-icon></button>
-		            <input className="src-input" type="text" placeholder="Type of search" />
-		          </form>
-		        </div>
-
-		      </div>
-		    </header>
-
+      <header className="header black-bg">
+        <div className="sidebar-toggle-box">
+          <div className="fa fa-bars tooltips" data-placement="right" data-original-title="Toggle Navigation"></div>
+        </div>
+        <a href="index.html" className="logo"><b>Web Programming 2019</b></a>
+      </header>
     );
   }
 }
 
-export default Header;
+export {Header, socket};

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { NavLink, Switch, Route } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 
 import '../assets/css/bootstrap.css';
 import '../assets/font-awesome/css/font-awesome.css';
@@ -13,7 +13,7 @@ class Sidebar extends Component {
           <div id="sidebar"  className="nav-collapse ">
             <ul className="sidebar-menu" id="nav-accordion">
 
-              <p className="centered"><a href="profile.html"><img src="./img/ui-sam.jpg" className="img-circle" width="60"></img></a></p>
+              <p className="centered"><a href="profile.html"><img alt="pic" src="./img/ui-sam.jpg" className="img-circle" width="60"></img></a></p>
               <h5 className="centered">Online Book Keeping</h5>
 
 
